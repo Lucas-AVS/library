@@ -91,18 +91,6 @@ header .line{
   transition:0.3s;
 }
 
-ul {
-  width: 220px;
-  display: grid;
-  grid-template-columns: auto;
-  background-color: var(--yellow);
-  padding: 10px;
-}
-
-ul li{
-  border-radius: 3px;
-}
-
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -111,6 +99,11 @@ ul li{
   border-radius: 3px;
 
   background-color: var(--yellow);
+}
+
+.modal-content h1 {
+  font-size: 2rem;
+  margin: 0 auto;
 }
 
 .modal-content input{
@@ -136,6 +129,7 @@ ul li{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: var(--black);
 }
 .modal-content .isRead input {
   position: absolute;
@@ -161,7 +155,7 @@ ul li{
   display: block;
 }
 .modal-content .isRead input:checked ~ .checkmark {
-  background-color: var(--orange);
+  background-color: var(--red);
 }
 .modal-content .isRead .checkmark:after {
   left: 9px;
@@ -193,3 +187,65 @@ ul li{
   background-color: var(--red);
   transition:0.3s;
 }
+
+ul {
+  padding-inline-start: 0;
+  margin: 41px auto 0 auto;
+  width: 220px;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: auto;
+}
+
+ul li{
+  padding: 15px;
+  background-color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li h1{
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+ul li p{
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+ul li button {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+
+  margin: 0;
+  width: 92%;
+  border-radius: 3px;
+  transition:0.3s;
+  padding: 8px;
+  font-size: 1.5rem;
+}
+
+ul li .isReadBtn{
+  background: var(--orange);
+}
+
+ul li .removeBook{
+  background: white;
+}
+
+
+/* 
+var li = document.createElement("li");
+var h1 = document.createElement("h1");
+var author = document.createElement("p");
+var pages = document.createElement("p"); 
+*/

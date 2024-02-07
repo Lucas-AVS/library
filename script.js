@@ -16,6 +16,8 @@ function Book(title, author, pages, read) {
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+const theHobbit2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
+const theHobbit3 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
 
 function addBookToLibrary() {
   // do stuff here
@@ -30,14 +32,26 @@ function displayLibrary() {
     var h1 = document.createElement("h1");
     var author = document.createElement("p");
     var pages = document.createElement("p");
+    var isReadBtn = document.createElement("button");
+    isReadBtn.className = "isReadBtn";
+    var removeBook = document.createElement("button");
+    removeBook.className = "removeBook";
 
     h1.textContent = book.title;
     author.textContent = book.author;
-    pages.textContent = book.pages + "pages";
+    pages.textContent = book.pages + " pages";
+    {
+      book.read
+        ? (isReadBtn.textContent = "Read")
+        : (isReadBtn.textContent = "Not read");
+    }
+    removeBook.textContent = "Remove";
 
     li.appendChild(h1);
     li.appendChild(author);
     li.appendChild(pages);
+    li.appendChild(isReadBtn);
+    li.appendChild(removeBook);
 
     libraryList.appendChild(li);
   });

@@ -42,8 +42,12 @@
   font-family: "Lora", serif;
 }
 
-.main {
+body {
+  height: 100%;
+  background: linear-gradient(#ffffff 60%, var(--orange) 40%);
   color: var(--black);
+  position: relative;
+  min-height: 100vh;
 }
 
 header {
@@ -195,6 +199,7 @@ ul {
   display: grid;
   grid-gap: 30px;
   grid-template-columns: auto;
+  padding-bottom: 80px;
 }
 
 ul li{
@@ -242,10 +247,13 @@ ul li .removeBook{
   background: white;
 }
 
-
-/* 
-var li = document.createElement("li");
-var h1 = document.createElement("h1");
-var author = document.createElement("p");
-var pages = document.createElement("p"); 
-*/
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}

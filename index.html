@@ -3,10 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Library</title>
-    <header>oioi</header>
-    <ul id="library-list"></ul>
   </head>
-  <body></body>
+  <body class="main">
+    <header class="header">library</header>
+
+    <!-- MODAL -->
+    <button id="btn">Open Modal</button>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Add new book</h1>
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <div>
+          <p>Have you read it?</p>
+          <input type="radio" />
+        </div>
+        <button>Submit</button>
+      </div>
+    </div>
+    <ul id="library-list"></ul>
+  </body>
   <script src="script.js"></script>
 </html>

@@ -3,15 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Library</title>
   </head>
   <body class="main">
-    <header class="header">library</header>
+    <header>
+      <img src="/assets/book.svg" alt="book icon" />
+      <h1>library</h1>
+      <div class="line"></div>
+    </header>
 
     <!-- MODAL -->
-    <button id="btn">Open Modal</button>
-    <div id="modal" class="modal">
+    <button id="myBtn">+ Add new book</button>
+    <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
         <h1>Add new book</h1>
@@ -25,6 +35,7 @@
         <button>Submit</button>
       </div>
     </div>
+
     <ul id="library-list"></ul>
   </body>
   <script src="script.js"></script>

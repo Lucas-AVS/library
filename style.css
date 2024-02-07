@@ -98,3 +98,98 @@ ul {
   background-color: var(--yellow);
   padding: 10px;
 }
+
+ul li{
+  border-radius: 3px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 300px;
+  border-radius: 3px;
+
+  background-color: var(--yellow);
+}
+
+.modal-content input{
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  border-radius: 3px;
+  padding: 8px;
+  font-size: 1.5rem;
+  color: var(--black);
+}
+
+/* CUSTOM CHECKMARK */
+.modal-content .isRead {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.modal-content .isRead input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.modal-content .isRead .checkmark {
+  position: absolute;
+  top: 23px;
+  right: 50px;
+  height: 25px;
+  width: 25px;
+  background-color: #ffffff;
+}
+.modal-content .isRead .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.modal-content .isRead input:checked ~ .checkmark:after {
+  display: block;
+}
+.modal-content .isRead input:checked ~ .checkmark {
+  background-color: var(--orange);
+}
+.modal-content .isRead .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.modal-content button {
+  background: var(--orange);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+
+  border-radius: 3px;
+  transition:0.3s;
+  padding: 8px;
+  font-size: 1.5rem;
+}
+
+.modal-content button:hover {
+  background-color: var(--red);
+  transition:0.3s;
+}

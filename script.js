@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 let index = 0;
 
@@ -11,10 +11,6 @@ function Book(title, author, pages, read) {
   index++;
   myLibrary.push(this);
 }
-
-const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-const theHobbit2 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
-const theHobbit3 = new Book("The Hobbit", "J.R.R. Tolkien", 295, false);
 
 function displayBook(book) {
   var li = document.createElement("li");
@@ -35,6 +31,11 @@ function displayBook(book) {
       ? (isReadBtn.textContent = "Read")
       : (isReadBtn.textContent = "Not read");
   }
+  {
+    book.read
+      ? (isReadBtn.style.backgroundColor = "#4CAF50")
+      : (isReadBtn.style.backgroundColor = "#FF847C");
+  }
   removeBook.textContent = "Remove";
 
   li.appendChild(h1);
@@ -43,6 +44,8 @@ function displayBook(book) {
   isReadBtn.setAttribute("data-book-id", li.id);
   isReadBtn.addEventListener("click", handleReadStatus);
   li.appendChild(isReadBtn);
+  removeBook.setAttribute("data-book-id", li.id);
+  removeBook.addEventListener("click", handleDeleteBook);
   li.appendChild(removeBook);
 
   return li;
@@ -118,17 +121,23 @@ function handleNewBook() {
 
 function handleReadStatus(event) {
   var bookId = event.target.getAttribute("data-book-id");
-  console.log("Clicked book ID:", bookId);
-
-  var currentBook = myLibrary.find(
-    (book) => "book-" + myLibrary.indexOf(book) === bookId
-  );
-
+  var currentBook = myLibrary.find((book) => book.id === bookId);
   if (currentBook) {
     currentBook.read = !currentBook.read;
-    console.log("Updated read status:", currentBook.title, currentBook.read);
     displayLibrary();
   } else {
-    console.log("Book not found for ID:", bookId);
+    console.log("ERROR: Book not found for ID ", bookId);
+  }
+}
+
+function handleDeleteBook(event) {
+  var bookId = event.target.getAttribute("data-book-id");
+  var currentBook = myLibrary.find((book) => book.id === bookId);
+  if (currentBook) {
+    let myNewLibrary = myLibrary.filter((book) => book !== currentBook);
+    myLibrary = myNewLibrary;
+    displayLibrary();
+  } else {
+    console.log("ERROR: Book not found for ID ", bookId);
   }
 }

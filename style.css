@@ -247,6 +247,11 @@ ul li .removeBook{
   background: white;
 }
 
+ul li .removeBook:hover{
+  background: var(--black);
+  color: white;
+}
+
 .footer {
   position: absolute;
   right: 0;

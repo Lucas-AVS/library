@@ -44,7 +44,7 @@
 
 body {
   height: 100%;
-  background: linear-gradient(#ffffff 60%, var(--orange) 40%);
+  background: linear-gradient(#ffffff 700px, var(--orange) 700px);
   color: var(--black);
   position: relative;
   min-height: 100vh;

@@ -89,6 +89,7 @@ document
   .addEventListener("click", handleNewBook);
 
 function resetFormInput() {
+  const modal = document.getElementById("myModal");
   modal.style.display = "none";
   document.getElementById("new-book-title").value = "";
   document.getElementById("new-book-author").value = "";
